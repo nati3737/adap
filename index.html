@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Adapciak</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
+<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!-- Countdown -->
+<div class="mb-12">
+  <h2 class="text-white text-xl mb-4 font-semibold drop-shadow-md">Do rozpoczęcia pozostało:</h2>
+  <div class="flex justify-center flex-wrap" id="countdown">
+    <div class="countdown-item shadow-lg">
+      <span class="countdown-value" id="days">00</span>
+      <span class="countdown-label">Dni</span>
+    </div>
+    <div class="countdown-item shadow-lg">
+      <span class="countdown-value" id="hours">00</span>
+      <span class="countdown-label">Godzin</span>
+    </div>
+    <div class="countdown-item shadow-lg">
+      <span class="countdown-value" id="minutes">00</span>
+      <span class="countdown-label">Minut</span>
+    </div>
+    <div class="countdown-item shadow-lg">
+      <span class="countdown-value" id="seconds">00</span>
+      <span class="countdown-label">Sekund</span>
+    </div>
+  </div>
+</div>
+
+<!-- CTA Button -->
+<button id="zobacz-plan" class="cta-button text-white font-bold py-3 px-8 rounded-full text-lg shadow-lg">
+  Zobacz plan 🏄‍♂️
+</button>
+
+<!-- Navigation Tabs -->
+<nav class="bg-white shadow-md sticky-nav">
+  <div class="container mx-auto px-4">
+    <div class="flex flex-wrap justify-center" id="tabs">
+      <button class="tab-button px-6 py-4 font-semibold" data-tab="plan">🗓️ Plan Dnia</button>
+      <button class="tab-button px-6 py-4 font-semibold" data-tab="lista">🎒 Lista Rzeczy</button>
+      <button class="tab-button px-6 py-4 font-semibold" data-tab="imprezy">🎉 Imprezy</button>
+      <button class="tab-button px-6 py-4 font-semibold" data-tab="zespol">👥 Zespół</button>
+    </div>
+  </div>
+</nav>
+
+<!-- Main Content -->
+<main class="flex-grow container mx-auto px-4 py-8">
+  <!-- Tab Content -->
+  <div id="tab-content">
+<!-- Plan Dnia Tab -->
+<div class="tab-content" id="plan-content">
+    <h2 class="lobster text-3xl text-center text-green mb-8">Plan Dnia 🗓️</h2>
+    <div class="grid grid-cols-1 md:grid-cols-7 gap-4">
+        <!-- Poniedziałek -->
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="bg-pink text-white p-3 text-center">
+                <h3 class="font-bold">Poniedziałek</h3>
+            </div>
+            <div class="p-4">
+                <ul class="space-y-2">
+                    <li class="flex justify-between"><span class="font-semibold">8:00</span><span>Śniadanie</span></li>
+                    <li class="flex justify-between"><span class="font-semibold">10:00</span><span>Integracja</span></li>
+                    <li class="flex justify-between"><span class="font-semibold">13:00</span><span>Obiad</span></li>
+                    <li class="flex justify-between"><span class="font-semibold">15:00</span><span>Plaża</span></li>
+                    <li class="flex justify-between"><span class="font-semibold">18:00</span><span>Kolacja</span></li>
+                    <li class="flex justify-between"><span class="font-semibold">20:00</span><span>Impreza</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Wtorek -->
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="bg-light-green text-white p-3 text-center">
+                <h3 class="font-bold">Wtorek</h3>
+            </div>
+            <div class="p-4">
+                <ul class="space-y-2">
+                    <li class="flex justify-between"><span class="font-semibold">8:00</span><span>Śniadanie</span></li>
+                    <li class="flex justify-between"><span class="font-semibold">10:00</span><span>Warsztaty</span></li>
+                    <li class="flex justify-between"><span class="font-semibold">13:00</span><span>Obiad</span></li>
+                    <li class="flex justify-between"><span class="font-semibold">15:00</span><span>Kajaki</span></li>
+                    <li class="flex justify-between"><span class="font-semibold">18:00</span><span>Kolacja</span></li>
+                    <li class="flex justify-between"><span class="font-semibold">20:00</span><span>Ognisko</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Środa -->
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="bg-green text-white p-3 text-center">
+                <h3 class="font-bold">Środa</h3>
+            </div>
+            <div class="p-4">
+                <ul class="space-y-2">
+                    <li class="flex justify-between"><span class="font-semibold">8:00</span><span>Śniadanie</span></li>
+                    <li class="flex justify-between"><span class="font-semibold">10:00</span><span>Wycieczka</span></li>
+                    <li class="flex justify-between"><span class="font-semibold">13:00</span><span>Obiad</span></li>
+                    <li class="flex justify-between"><span class="font-semibold">15:00</span><span>Gry</span></li>
+                    <li class="flex justify-between"><span class="font-semibold">18:00</span><span>Kolacja</span></li>
+                    <li class="flex justify-between"><span class="font-semibold">20:00</span><span>Impreza</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Czwartek -->
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="bg-light-pink text-white p-3 text-center">
+                <h3 class="font-bold">Czwartek</h3>
+            </div>
+            <div class="p-4">
+                <ul class="space-y-2">
+                    <li class="flex justify-between"><span class="font-semibold">8:00</span><span>Śniadanie</span></li>
+                    <li class="flex justify-between"><span class="font-semibold">10:00</span><span>Sporty</span></li>
+                    <li class="flex justify-between"><span class="font-semibold">13:00</span><span>Obiad</span></li>
+                    <li class="flex justify-between"><span class="font-semibold">15:00</span><span>Plaża</span></li>
+                    <li class="flex justify-between"><span class="font-semibold">18:00</span><span>Kolacja</span></li>
+                    <li class="flex justify-between"><span class="font-semibold">20:00</span><span>Karaoke</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Piątek -->
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="bg-pink text-white p-3 text-center">
+                <h3 class="font-bold">Piątek</h3>
+            </div>
+            <div class="p-4">
+                <ul class="space-y-2">
+                    <li class="flex justify-between"><span class="font-semibold">8:00</span><span>Śniadanie</span></li>
+                    <li class="flex justify-between"><span class="font-semibold">10:00</span><span>Warsztaty</span></li>
+                    <li class="flex justify-between"><span class="font-semibold">13:00</span><span>Obiad</span></li>
+                    <li class="flex justify-between"><span class="font-semibold">15:00</span><span>Konkursy</span></li>
+                    <li class="flex justify-between"><span class="font-semibold">18:00</span><span>Kolacja</span></li>
+                    <li class="flex justify-between"><span class="font-semibold">20:00</span><span>Impreza</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Sobota -->
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="bg-light-green text-white p-3 text-center">
+                <h3 class="font-bold">Sobota</h3>
+            </div>
+            <div class="p-4">
+                <ul class="space-y-2">
+                    <li class="flex justify-between"><span class="font-semibold">8:00</span><span>Śniadanie</span></li>
+                    <li class="flex justify-between"><span class="font-semibold">10:00</span><span>Wycieczka</span></li>
+                    <li class="flex justify-between"><span class="font-semibold">13:00</span><span>Obiad</span></li>
+                    <li class="flex justify-between"><span class="font-semibold">15:00</span><span>Plaża</span></li>
+                    <li class="flex justify-between"><span class="font-semibold">18:00</span><span>Kolacja</span></li>
+                    <li class="flex justify-between"><span class="font-semibold">20:00</span><span>Impreza</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Niedziela -->
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="bg-green text-white p-3 text-center">
+                <h3 class="font-bold">Niedziela</h3>
+            </div>
+            <div class="p-4">
+                <ul class="space-y-2">
+                    <li class="flex justify-between"><span class="font-semibold">8:00</span><span>Śniadanie</span></li>
+                    <li class="flex justify-between"><span class="font-semibold">10:00</span><span>Pakowanie</span></li>
+                    <li class="flex justify-between"><span class="font-semibold">12:00</span><span>Pożegnanie</span></li>
+                    <li class="flex justify-between"><span class="font-semibold">13:00</span><span>Obiad</span></li>
+                    <li class="flex justify-between"><span class="font-semibold">14:00</span><span>Wyjazd</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Lista Rzeczy Tab -->
+<div class="tab-content" id="lista-content">
+    <h2 class="lobster text-3xl text-center text-green mb-8">Lista Rzeczy 🎒</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Ubrania -->
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="bg-pink text-white p-3 text-center">
+                <h3 class="font-bold">Ubrania</h3>
+            </div>
+            <div class="p-4">
+                <ul class="list-disc pl-5 space-y-2">
+                    <li>Koszulki (min. 7 szt.)</li>
+                    <li>Spodenki (min. 3 pary)</li>
+                    <li>Długie spodnie (1-2 pary)</li>
+                    <li>Bluzy/swetry (2-3 szt.)</li>
+                    <li>Bielizna (min. 8 kompletów)</li>
+                    <li>Skarpetki (min. 8 par)</li>
+                    <li>Strój kąpielowy (2 szt.)</li>
+                    <li>Piżama</li>
+                    <li>Kurtka przeciwdeszczowa</li>
+                    <li>Czapka z daszkiem/kapelusz</li>
+                    <li>Okulary przeciwsłoneczne</li>
+                    <li>Stroje na imprezy tematyczne</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Technologia -->
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="bg-light-green text-white p-3 text-center">
+                <h3 class="font-bold">Technologia</h3>
+            </div>
+            <div class="p-4">
+                <ul class="list-disc pl-5 space-y-2">
+                    <li>Telefon + ładowarka</li>
+                    <li>Powerbank</li>
+                    <li>Słuchawki</li>
+                    <li>Aparat fotograficzny</li>
+                    <li>Przedłużacz</li>
+                    <li>Latarka</li>
+                    <li>Wodoodporne etui na telefon</li>
+                    <li>Głośnik bezprzewodowy (opcjonalnie)</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Inne -->
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="bg-green text-white p-3 text-center">
+                <h3 class="font-bold">Inne</h3>
+            </div>
+            <div class="p-4">
+                <ul class="list-disc pl-5 space-y-2">
+                    <li>Ręczniki (2 szt. + plażowy)</li>
+                    <li>Kosmetyki i przybory toaletowe</li>
+                    <li>Krem z filtrem UV</li>
+                    <li>Środek na owady</li>
+                    <li>Leki osobiste</li>
+                    <li>Plecak na wycieczki</li>
+                    <li>Buty (sportowe, klapki, sandały)</li>
+                    <li>Bidon/butelka na wodę</li>
+                    <li>Portfel i dokumenty</li>
+                    <li>Kieszonkowe</li>
+                    <li>Gry karciane/planszowe</li>
+                    <li>Książka/czasopisma</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Imprezy Tab -->
+<div class="tab-content" id="imprezy-content">
+    <h2 class="lobster text-3xl text-center text-green mb-8">Imprezy 🎉</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Impreza 1 -->
+        <div class="party-card bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="bg-pink text-white p-3 text-center">
+                <h3 class="font-bold">Powitalna Integracja</h3>
+                <p class="text-sm">31.08.2025</p>
+            </div>
+            <div class="p-4">
+                <p class="font-semibold mb-2">Dress code:</p>
+                <p class="mb-4">Ubierz się w barwy swojego wydziału!</p>
+                <p class="font-semibold mb-2">Opis:</p>
+                <p>Poznaj innych uczestników podczas pierwszej imprezy integracyjnej. Gry, zabawy i muzyka do białego rana!</p>
+            </div>
+        </div>
+        
+        <!-- Impreza 2 -->
+        <div class="party-card bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="bg-light-green text-white p-3 text-center">
+                <h3 class="font-bold">Hawajska Noc</h3>
+                <p class="text-sm">01.09.2025</p>
+            </div>
+            <div class="p-4">
+                <p class="font-semibold mb-2">Dress code:</p>
+                <p class="mb-4">Hawajskie koszule, kwiaty, kolorowe ubrania</p>
+                <p class="font-semibold mb-2">Opis:</p>
+                <p>Poczuj tropikalny klimat na naszej hawajskiej imprezie! Drinki z palemką, limbo i hawajska muzyka.</p>
+            </div>
+        </div>
+        
+        <!-- Impreza 3 -->
+        <div class="party-card bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="bg-green text-white p-3 text-center">
+                <h3 class="font-bold">Biała Noc</h3>
+                <p class="text-sm">02.09.2025</p>
+            </div>
+            <div class="p-4">
+                <p class="font-semibold mb-2">Dress code:</p>
+                <p class="mb-4">Ubierz się na biało!</p>
+                <p class="font-semibold mb-2">Opis:</p>
+                <p>Elegancka impreza w bieli. Świetlna dekoracja, neonowe dodatki i muzyka elektroniczna.</p>
+            </div>
+        </div>
+        
+        <!-- Impreza 4 -->
+        <div class="party-card bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="bg-light-pink text-white p-3 text-center">
+                <h3 class="font-bold">Lata 80-te</h3>
+                <p class="text-sm">03.09.2025</p>
+            </div>
+            <div class="p-4">
+                <p class="font-semibold mb-2">Dress code:</p>
+                <p class="mb-4">Styl retro, neonowe kolory, getry</p>
+                <p class="font-semibold mb-2">Opis:</p>
+                <p>Powrót do przeszłości! Muzyka disco, kolorowe światła i najlepsze hity lat 80-tych.</p>
+            </div>
+        </div>
+        
+        <!-- Impreza 5 -->
+        <div class="party-card bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="bg-pink text-white p-3 text-center">
+                <h3 class="font-bold">Neon Party</h3>
+                <p class="text-sm">04.09.2025</p>
+            </div>
+            <div class="p-4">
+                <p class="font-semibold mb-2">Dress code:</p>
+                <p class="mb-4">Neonowe ubrania, świecące dodatki</p>
+                <p class="font-semibold mb-2">Opis:</p>
+                <p>Rozbłyśnij w ciemności! Impreza z neonowymi światłami, farbami UV i energetyczną muzyką.</p>
+            </div>
+        </div>
+        
+        <!-- Impreza 6 -->
+        <div class="party-card bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="bg-light-green text-white p-3 text-center">
+                <h3 class="font-bold">Piżama Party</h3>
+                <p class="text-sm">05.09.2025</p>
+            </div>
+            <div class="p-4">
+                <p class="font-semibold mb-2">Dress code:</p>
+                <p class="mb-4">Piżamy, szlafroki, kapcie</p>
+                <p class="font-semibold mb-2">Opis:</p>
+                <p>Komfortowa impreza w piżamach! Poduszki, koce i relaksująca atmosfera z muzyką na życzenie.</p>
+            </div>
+        </div>
+        
+        <!-- Impreza 7 -->
+        <div class="party-card bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="bg-green text-white p-3 text-center">
+                <h3 class="font-bold">Pożegnalna Gala</h3>
+                <p class="text-sm">06.09.2025</p>
+            </div>
+            <div class="p-4">
+                <p class="font-semibold mb-2">Dress code:</p>
+                <p class="mb-4">Elegancki strój (sukienki, koszule)</p>
+                <p class="font-semibold mb-2">Opis:</p>
+                <p>Uroczyste zakończenie Adapciaka. Wręczenie nagród, podsumowanie wyjazdu i ostatnia wspólna zabawa.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Zespół Tab -->
+<div class="tab-content" id="zespol-content">
+    <h2 class="lobster text-3xl text-center text-green mb-8">Zespół 👥</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <!-- Osoba 1 -->
+        <div class="team-card bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="p-4 text-center">
+                <div class="w-24 h-24 mx-auto mb-3 rounded-full bg-light-pink flex items-center justify-center">
+                    <span class="text-3xl">👩‍🦰</span>
+                </div>
+                <h3 class="font-bold text-lg">Anna Kowalska</h3>
+                <p class="text-sm text-gray-600 mb-2">Koordynator Główny</p>
+                <p class="text-sm">📧 anna@adapciak.pl</p>
+                <p class="text-sm">📱 123-456-789</p>
+            </div>
+        </div>
+
+        <!-- Osoba 2 -->
+        <div class="team-card bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="p-4 text-center">
+                <div class="w-24 h-24 mx-auto mb-3 rounded-full bg-light-green flex items-center justify-center">
+                    <span class="text-3xl">👨</span>
+                </div>
+                <h3 class="font-bold text-lg">Piotr Nowak</h3>
+                <p class="text-sm text-gray-600 mb-2">Koordynator Imprez</p>
+                <p class="text-sm">📧 piotr@adapciak.pl</p>
+                <p class="text-sm">📱 234-567-890</p>
+            </div>
+        </div>
+
+        <!-- Osoba 3 -->
+        <div class="team-card bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="p-4 text-center">
+                <div class="w-24 h-24 mx-auto mb-3 rounded-full bg-pink flex items-center justify-center">
+                    <span class="text-3xl">👩‍🦱</span>
+                </div>
+                <h3 class="font-bold text-lg">Karolina Wiśniewska</h3>
+                <p class="text-sm text-gray-600 mb-2">Koordynator Logistyki</p>
+                <p class="text-sm">📧 karolina@adapciak.pl</p>
+                <p class="text-sm">📱 345-678-901</p>
+            </div>
+        </div>
+
+        <!-- Osoba 4 -->
+        <div class="team-card bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="p-4 text-center">
+                <div class="w-24 h-24 mx-auto mb-3 rounded-full bg-green flex items-center justify-center">
+                    <span class="text-3xl">👨‍🦱</span>
+                </div>
+                <h3 class="font-bold text-lg">Michał Kowalczyk</h3>
+                <p class="text-sm text-gray-600 mb-2">Koordynator Warsztatów</p>
+                <p class="text-sm">📧 michal@adapciak.pl</p>
+                <p class="text-sm">📱 456-789-012</p>
+            </div>
+        </div>
+
+        <!-- Osoba 5 -->
+        <div class="team-card bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="p-4 text-center">
+                <div class="w-24 h-24 mx-auto mb-3 rounded-full bg-light-pink flex items-center justify-center">
+                    <span class="text-3xl">👩</span>
+                </div>
+                <h3 class="font-bold text-lg">Natalia Lewandowska</h3>
+                <p class="text-sm text-gray-600 mb-2">Opiekun Grupy 1</p>
+                <p class="text-sm">📧 natalia@adapciak.pl</p>
+                <p class="text-sm">📱 567-890-123</p>
+            </div>
+        </div>
+
+        <!-- Osoba 6 -->
+        <div class="team-card bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="p-4 text-center">
+                <div class="w-24 h-24 mx-auto mb-3 rounded-full bg-light-green flex items-center justify-center">
+                    <span class="text-3xl">👨‍🦰</span>
+                </div>
+                <h3 class="font-bold text-lg">Kamil Zieliński</h3>
+                <p class="text-sm text-gray-600 mb-2">Opiekun Grupy 2</p>
+                <p class="text-sm">📧 kamil@adapciak.pl</p>
+                <p class="text-sm">📱 678-901-234</p>
+            </div>
+        </div>
+
+        <!-- Osoba 7 -->
+        <div class="team-card bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="p-4 text-center">
+                <div class="w-24 h-24 mx-auto mb-3 rounded-full bg-pink flex items-center justify-center">
+                    <span class="text-3xl">👩‍🦳</span>
+                </div>
+                <h3 class="font-bold text-lg">Aleksandra Dąbrowska</h3>
+                <p class="text-sm text-gray-600 mb-2">Opiekun Grupy 3</p>
+                <p class="text-sm">📧 ola@adapciak.pl</p>
+                <p class="text-sm">📱 789-012-345</p>
+            </div>
+        </div>
+
+        <!-- Osoba 8 -->
+        <div class="team-card bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="p-4 text-center">
+                <div class="w-24 h-24 mx-auto mb-3 rounded-full bg-green flex items-center justify-center">
+                    <span class="text-3xl">👨‍🦳</span>
+                </div>
+                <h3 class="font-bold text-lg">Tomasz Jankowski</h3>
+                <p class="text-sm text-gray-600 mb-2">Opiekun Grupy 4</p>
+                <p class="text-sm">📧 tomasz@adapciak.pl</p>
+                <p class="text-sm">📱 890-123-456</p>
+            </div>
+        </div>
+
+        <!-- Osoba 9 -->
+        <div class="team-card bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="p-4 text-center">
+                <div class="w-24 h-24 mx-auto mb-3 rounded-full bg-light-pink flex items-center justify-center">
+                    <span class="text-3xl">👩‍🦰</span>
+                </div>
+                <h3 class="font-bold text-lg">Magdalena Szymańska</h3>
+                <p class="text-sm text-gray-600 mb-2">DJ</p>
+                <p class="text-sm">📧 magda@adapciak.pl</p>
+                <p class="text-sm">📱 901-234-567</p>
+            </div>
+        </div>
+
+        <!-- Osoba 10 -->
+        <div class="team-card bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="p-4 text-center">
+                <div class="w-24 h-24 mx-auto mb-3 rounded-full bg-light-green flex items-center justify-center">
+                    <span class="text-3xl">👨‍🦱</span>
+                </div>
+                <h3 class="font-bold text-lg">Jakub Wojciechowski</h3>
+                <p class="text-sm text-gray-600 mb-2">Fotograf</p>
+                <p class="text-sm">📧 jakub@adapciak.pl</p>
+                <p class="text-sm">📱 012-345-678</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer -->
+<footer class="bg-pink text-white py-4">
+    <div class="container mx-auto px-4 text-center">
+        <p class="lobster text-xl mb-2">Adapciak 2025</p>
+        <p>Zawsze legendarnie!</p>
+        <p class="mt-4 text-sm">© 2025 Samorząd Studencki</p>
+    </div>
+</footer>
+
+</div> <!-- Zamknięcie kontenera -->
+
+<!-- Skrypt -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Set default active tab
+        document.querySelector('[data-tab="plan"]').classList.add('active');
+        document.getElementById('plan-content').classList.add('active');
+
+        // Tab functionality
+        const tabs = document.querySelectorAll('.tab-button');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
+
+                tab.classList.add('active');
+                const tabId = tab.getAttribute('data-tab');
+                document.getElementById(`${tabId}-content`).classList.add('active');
+            });
+        });
+
+        // Countdown
+        const countdownDate = new Date("August 31, 2025 00:00:00").getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = countdownDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").textContent = days.toString().padStart(2, '0');
+            document.getElementById("hours").textContent = hours.toString().padStart(2, '0');
+            document.getElementById("minutes").textContent = minutes.toString().padStart(2, '0');
+            document.getElementById("seconds").textContent = seconds.toString().padStart(2, '0');
+
+            if (distance < 0) {
+                clearInterval(countdownInterval);
+                document.getElementById("days").textContent = "00";
+                document.getElementById("hours").textContent = "00";
+                document.getElementById("minutes").textContent = "00";
+                document.getElementById("seconds").textContent = "00";
+            }
+        }
+
+        updateCountdown();
+        const countdownInterval = setInterval(updateCountdown, 1000);
+
+        // Scroll to Plan
+        document.getElementById('zobacz-plan').addEventListener('click', function() {
+            tabs.forEach(t => t.classList.remove('active'));
+            tabContents.forEach(content => content.classList.remove('active'));
+
+            document.querySelector('[data-tab="plan"]').classList.add('active');
+            document.getElementById('plan-content').classList.add('active');
+            document.getElementById('plan-content').scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+</script>
+
+</body>
+</html>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
